@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "work" # Used in routes, e.g., /admin/collections/blog
+    label: "Projects" # Used in the UI
+    folder: "content/work" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename templat
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "featuredImage", widget: "image"}
+      - {label: "Importance", name: "importance", widget: "number"}
+      - {label: "Body", name: "body", widget: "markdown"}

@@ -15,7 +15,10 @@
       <li v-for="post in $page.posts.edges" :key="post.id">
         <g-link :to="post.node.path">
           {{ post.node.title }}
+        <img alt="Example image" v-bind:src="post.node.featuredImage">
+
         </g-link>
+
       </li>
     </ul>
 
@@ -79,6 +82,7 @@ query ProjectPosts {
         content
         category
         path
+        featuredImage
       }
     }
   }

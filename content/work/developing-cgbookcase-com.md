@@ -2,6 +2,8 @@
 title: Developing cgbookcase.com
 slug: jaloley
 category: cgbookcase
+featuredImage: /uploads/2.jpg
+importance: 1
 ---
 
 ## Secondary Heading

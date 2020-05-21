@@ -2,6 +2,8 @@
 title: Immersion VR
 slug: creating-an-interactive-vr-environment
 category: vr
+featuredImage: /uploads/4.jpg
+importance: 1
 ---
 
 ## Secondary Heading
