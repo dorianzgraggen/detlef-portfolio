@@ -23,6 +23,13 @@ module.exports = {
         typeName: 'ProjectPost',
         path: './content/work/**/*.md',
       }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'LinkPost',
+        path: './content/link/**/*.md',
+      }
     }
   ],
   transformers: {
