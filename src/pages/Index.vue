@@ -39,8 +39,19 @@
     <ProjectList :array="$page.morePosts.edges" :startIndex="$page.cgbPosts.edges.length + $page.renderingPosts.edges.length + $page.vrPosts.edges.length"/>
 
     
+    <h2>Posts</h2>
 
+    <ul class="links">
+      <li v-for="post in $page.links.edges" :key="post.id">
+        
+          <a :href="post.node.link" target="_blank">
+            <g-image :src="post.node.favicon"></g-image>
 
+            <span>{{ post.node.title}}</span> 
+            <span> {{ months[new Date(post.node.date).getMonth()]}} '{{ new Date(post.node.date).getFullYear().toString().substring(2)}}</span>
+          </a>
+      </li>
+    </ul>
 
 
     <p class="home-links">
@@ -54,15 +65,13 @@
 
 <page-query>
 query ProjectPosts {
-  posts: allProjectPost {
+  links: allLinkPost {
     edges {
       node {
         title
-        slug
-        content
-        category
-        path
-        featuredImage
+        link
+        favicon
+        date
       }
     }
   },
@@ -124,13 +133,37 @@ query ProjectPosts {
 <script>
 import ProjectList from '~/components/ProjectList.vue'
 
+
+
+// var months = [ "January", "February", "March", "April", "May", "June", 
+//            "July", "August", "September", "October", "November", "December" ];
+
 export default {
   metaInfo: {
     title: 'Hello, world!'
   },
   components: {
     ProjectList
+  },
+  data () {
+    return {
+      months: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun", 
+        "Jul",
+        "Aug",
+        "Sept",
+        "Oct",
+        "Nov",
+        "Dec"
+      ]
+    }
   }
+ 
 }
 
 
@@ -142,8 +175,18 @@ export default {
   margin-right: 1rem;
 }
 
-h3 {
+h3, h2 {
   text-align: center;
+}
+
+ul>li>a>img {
+  width: 30px;
+  height: 30px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }
 
 </style>
