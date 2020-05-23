@@ -2,6 +2,8 @@
 title: Creating PBR Textures
 slug: creating-pbr-textures
 category: cgbookcase
+catgory: cgbookcase
+date: 2020-05-23T11:19:40.779Z
 featuredImage: /uploads/1.jpg
 importance: 1
 ---
