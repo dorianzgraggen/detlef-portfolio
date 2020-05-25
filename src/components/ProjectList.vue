@@ -4,11 +4,15 @@
      <div class="portfolio-item" v-for="(post, index) in array" :key="post.id" :class="'project-' + (((index + parseInt(startIndex, 10)) % 2))">
         
         <div class="desc-container">
-          <g-link :to="post.node.path">
-            <h4>{{ post.node.title }}</h4>
-          </g-link>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit repellat iure officiis mollitia tempore magnam delectus sequi praesentium dolores dolorem, a nemo deleniti laborum at temporibus odio, inventore libero deserunt.</p>
-
+          <span>
+            <g-link :to="post.node.path">
+              <h4 style="margin-bottom: 0px; margin-top: 2px">{{ post.node.title }}</h4>
+            </g-link>
+            <p style="margin-top: 6px; margin-bottom: 0px">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit repellat iure officiis mollitia tempore magnam delectus sequi praesentium dolores dolorem, a nemo deleniti laborum at temporibus odio, inventore libero deserunt.</p>
+            <p style="margin-top: 26px">
+              <g-link :to="post.node.path" class="df-btn">Keep reading ...</g-link>
+            </p>
+          </span>
         </div>
         
         <div class="thumb-container">
@@ -45,6 +49,10 @@ export default {
 
 .desc-container {
   width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
 }
 
 .thumb-container {

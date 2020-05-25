@@ -2,13 +2,12 @@
   <div class="layout">
     <header class="header">
       <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
+        <g-link to="/" id="logo">{{ $static.metadata.siteName }}</g-link>
       </strong>
       <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/#work">Work</g-link>
-        <g-link class="nav__link" to="/#posts">Posts</g-link>
-        <g-link class="nav__link" to="/#about">About</g-link>
+        <a class="nav__link" href="/#work">Work</a>
+        <a class="nav__link" href="/#posts">Posts</a>
+        <a class="nav__link" href="/#about">About</a>
       </nav>
     </header>
     <transition name="fade" appear>
@@ -28,19 +27,116 @@ query {
 </static-query>
 
 <style>
+::-webkit-scrollbar {
+    background: #0F1420;
+}
+::-webkit-scrollbar-thumb {
+    background: #2F3541;
+}
+
+::selection {
+  background: rgb(32, 70, 141); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: rgb(32, 70, 141); /* Gecko Browsers */
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-color: #2F3541 #0F1420;
+}
+
 body { 
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  /* font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; */
   margin:0;
   padding:0;
   line-height: 1.5;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  background-color: #03060C;
+  color: white;
+}
+
+strong {
+  font-weight: 600;
+}
+
+p {
+  font-weight: 300;
+  hyphens: auto;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  /* border-bottom: 2px solid rgba(255, 255, 255, 0.39); */
+  /* transition-duration: .1s;
+  background:
+     linear-gradient(
+       to right, rgba(122, 224, 161, 0.76) 0%,
+       rgba(122, 224, 144, 0.774) 100%
+     );
+	background-position: 0 100%;
+	background-repeat: repeat-x;
+	background-size: 100% 3px;
+  text-decoration: none;
+  transition: background-size .2s;
+  padding-bottom: 2px; */
+  /* border-radius: 3px */
+}
+
+.df-btn {
+  background: #89a2e60f;
+  padding: 9px;
+  border-radius: 2px;
+  border: 2px solid #89a2e613;
+  display: inline-block;
+  transition: background-color .2s;
+  /* transition: transform .05s; */
+}
+
+.df-btn:hover {
+  background: #89a2e609;
+}
+
+.df-btn:active {
+  /* background-color: #040913;
+  border-color: #070f1f; */
+  transform: translateY(2px);
+  outline: none;
+}
+
+
+a:hover {
+    background-size: 100% 5px;
+
+  /* border-bottom-color: rgba(255, 255, 255, 0.589); */
+  /* background-color: rgba(255, 255, 255, 0.19); */
+}
+
+.nav__link, #logo {
+  background: none;
+}
+
+a:visited {
+  color: none;
 }
 
 .layout {
-  max-width: 760px;
+  max-width: 1020px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.narrow {
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .header {
@@ -49,6 +145,7 @@ body {
   align-items: center;
   margin-bottom: 20px;
   height: 80px;
+   
 }
 
 .nav__link {
@@ -70,6 +167,10 @@ body {
 .fade-enter,
 .fade-leave-active {
   opacity: 0;
+}
+
+.dimmed {
+  color: #e8efff86;
 }
 
 
