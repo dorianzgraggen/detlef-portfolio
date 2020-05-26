@@ -2,7 +2,7 @@
 title: Everyday Renders
 slug: everydays
 category: 3d
-featuredImage: /uploads/3.jpg
+featuredImage: /uploads/leaves.jpg
 importance: 1
 ---
 

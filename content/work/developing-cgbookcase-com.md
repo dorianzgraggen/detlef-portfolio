@@ -1,8 +1,8 @@
 ---
-title: Developing cgbookcase.com
+title: Design and development
 slug: jaloley
 category: cgbookcase
-featuredImage: /uploads/2.jpg
+featuredImage: /uploads/cgb-mockup.jpg
 importance: 1
 ---
 

@@ -91,17 +91,18 @@ a {
 }
 
 .df-btn {
-  background: #89a2e60f;
+  background: #738cca31;
   padding: 9px;
   border-radius: 2px;
-  border: 2px solid #89a2e613;
+  border: 2px solid #a1b3e547;
+  /* border: 2px solid #89a2e613; */
   display: inline-block;
   transition: background-color .2s;
   /* transition: transform .05s; */
 }
 
 .df-btn:hover {
-  background: #89a2e609;
+  background: #3e4a6b31;
 }
 
 .df-btn:active {
@@ -171,6 +172,10 @@ a:visited {
 
 .dimmed {
   color: #e8efff86;
+}
+
+.text-center {
+  text-align: center;
 }
 
 

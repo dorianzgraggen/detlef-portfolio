@@ -16,7 +16,7 @@
         </div>
         
         <div class="thumb-container">
-          <g-image src="/uploads/thumb_placeholder.png"></g-image>
+          <g-image :src="post.node.featuredImage"></g-image>
           <!-- <g-image :src="post.node.featuredImage" width=""></g-image> -->
         </div>
       </div>
@@ -60,6 +60,7 @@ export default {
 }
 .thumb-container .g-image {
   width: 80%;
+  border-radius: 3px;
 }
 
 .project-1 {

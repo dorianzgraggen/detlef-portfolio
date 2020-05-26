@@ -73,7 +73,6 @@
     
       <h2 id="about">About</h2>
       <p>Thy bird nevermore that raven for my at. Velvet grim blessed at it, from now nevermore followed till thy mien shorn the i, a faintly laden rare some and. And lordly it meaninglittle here this muttered by. Said i or.</p>
-      <p v-on:click="mailto"></p>
     </section>
 
     <div class="socialmedia-container">

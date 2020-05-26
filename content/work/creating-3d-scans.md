@@ -4,7 +4,7 @@ slug: 3d-scans
 category: cgbookcase
 catgory: cgbookcase
 date: 2020-05-23T14:03:12.361Z
-featuredImage: /uploads/2.jpg
+featuredImage: /uploads/scans.jpg
 importance: 1
 ---
 

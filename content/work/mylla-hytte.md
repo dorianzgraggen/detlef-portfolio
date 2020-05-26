@@ -2,7 +2,7 @@
 title: Mylla Hytte
 slug: mylla-hytte
 category: 3d
-featuredImage: /uploads/5.jpg
+featuredImage: /uploads/myllahytte-thumbnail.jpg
 importance: 1
 ---
 
