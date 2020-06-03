@@ -16,7 +16,9 @@
         </div>
         
         <div class="thumb-container">
-          <g-image :src="post.node.featuredImage"></g-image>
+          <g-link :to="post.node.path">
+            <g-image :src="post.node.featuredImage"></g-image>
+          </g-link>
           <!-- <g-image :src="post.node.featuredImage" width=""></g-image> -->
         </div>
       </div>
@@ -41,6 +43,7 @@ export default {
 
 <style>
 
+
 .portfolio-item {
   display: flex;
   margin-top: 36px;
@@ -52,7 +55,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: left;
+  text-align: left !important;
 }
 
 .thumb-container {
@@ -67,7 +70,11 @@ export default {
   flex-direction: row-reverse;
 }
 
-.project-0 .g-image {
+.project-1 img {
+  float: left;
+}
+
+.project-0 img {
   float: right;
 }
 

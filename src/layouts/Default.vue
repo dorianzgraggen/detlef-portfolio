@@ -42,7 +42,7 @@ query {
 }
 
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
   scrollbar-color: #2F3541 #0F1420;
 }
 
@@ -176,6 +176,17 @@ a:visited {
 
 .text-center {
   text-align: center;
+}
+
+iframe {
+  border: none;
+}
+
+@media only screen and (max-width: 1060px) {
+  header {
+    height: 60px !important;
+  }
+  
 }
 
 

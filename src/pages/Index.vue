@@ -9,7 +9,7 @@
       </div>
       <div id="start-desc">
         <span>
-        Hey, I'm <strong>Dorian Zgraggen</strong> and I create <a href="/#cgbookcase">cgbookcase.com</a>, <a href="/#3d">3D Renderings</a>, <a href="/#vr">VR stuff</a> and <a href="/#more">more</a>.
+        Hey, I'm <strong>Dorian Zgraggen</strong>. <br>I run <a href="/#cgbookcase" data-color="red">cgbookcase.com</a> and create <br><a href="/#3d" data-color="yellow">3D Renderings</a>, <a href="/#vr"  data-color="green">VR stuff</a> and <a href="/#more" data-color="blue">more</a>.
         </span>
       </div>
     </div>
@@ -46,7 +46,7 @@
     
     <h2 id="posts">Posts</h2>
 
-    <ul class="links">
+    <ul class="links" style="list-style-type: none; padding: 0;" id="links_p">
       <li v-for="post in $page.links.edges" :key="post.id">
         
           <a :href="post.node.link" target="_blank" class="linkpost">
@@ -217,6 +217,50 @@ export default {
   text-align: left;
 }
 
+#start-desc a {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  transition-duration: .15s;
+  /* color: white; */
+  /* text-decoration: underline #a9c5ff; */
+}
+
+a[data-color="red"] {
+  border-bottom-color: #ef476fcc;
+}
+
+
+a[data-color="red"]:hover {
+  color:  #ef476f;
+}
+
+a[data-color="yellow"] {
+  border-bottom-color: #ffd166dd;
+}
+
+
+a[data-color="yellow"]:hover {
+  color:  #ffd166;
+}
+
+a[data-color="green"] {
+  border-bottom-color: #06d6a0cc;
+}
+
+
+a[data-color="green"]:hover {
+  color:  #06d6a0;
+}
+
+a[data-color="blue"] {
+  border-bottom-color: #118ab2cc
+}
+
+
+a[data-color="blue"]:hover {
+  color:  #118ab2;
+}
+  
 h3, h2 {
   text-align: center;
 }
@@ -228,9 +272,9 @@ ul>li>a>div>img {
   display: block;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+#links_p {
+  list-style-type: none !important;
+  padding: 0 !important;
 }
 
 .linkpost {

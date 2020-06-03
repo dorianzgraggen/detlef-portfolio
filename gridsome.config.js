@@ -18,10 +18,19 @@ module.exports = {
       }
     },
     {
-      use: '@gridsome/source-filesystem',
+      use: '@gridsome/vue-remark',
       options: {
         typeName: 'ProjectPost',
         path: './content/work/**/*.md',
+        baseDir: './content/work',
+        pathPrefix: '/work',
+        template: './src/templates/ProjectPost.vue',
+        plugins: [
+          "remark-attr",
+          "remark-container",
+          "gridsome-plugin-remark-youtube"
+        ]
+        
       }
     },
     {
@@ -34,10 +43,12 @@ module.exports = {
   ],
   transformers: {
     remark: {
-      // global remark options
+      xternalLinksTarget: "_blank",
+      externalLinksRel: ["nofollow", "noopener", "noreferrer"],
+      // anchorClassName: "icon icon-link",
     }
   },
-  templates: {
-    ProjectPost: '/work/:slug'
-  }
+  // templates: {
+  //   ProjectPost: '/work/:slug'
+  // }
 }
