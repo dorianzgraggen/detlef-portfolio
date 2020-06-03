@@ -4,6 +4,7 @@ slug: creating-an-interactive-vr-environment
 category: vr
 featuredImage: /uploads/immersion-thumbnaill.jpg
 importance: 1
+description: Over the last few years, I've created more than 400 PBR textures and released them to the public domain. The textures are made out of four to six different types of texture maps.
 ---
 import VideoBlock from '~/components/VideoBlock.vue'
 import ImageBlock from '~/components/ImageBlock.vue'
@@ -49,7 +50,9 @@ It was important to me that not only the controls are nice to use, but also the 
 
 <ImageBlock image="immersion_baking.jpg" :onLeftSide="true" title="Baking" desc="For a lot of models in the scene, I created a high poly version and a low poly version. The normals of the high poly version were then baked in Substance Painter and applied to the low poly version to create a highly detailed look while having an efficient 3D model." />
 
-<ImageBlock image="immersion_modeling.jpg" :onLeftSide="false" title="Texture Creation" desc="For this project, I created a bunch of materials in Substance Designer and reused some I've already created for cgbookcase.com. I also published breakdowns of two materials created for this project." />
+
+#### Texture Creation{style="text-align:center"}
+For this project, I created a bunch of materials in Substance Designer and reused some I've already created for cgbookcase.com. I also published [breakdowns of two materials created for this project](https://www.cgbookcase.com/learn/immersion-vr-substance-designer-material-breakdowns).
 
 
 ### Results
@@ -70,12 +73,12 @@ The entire code of this project can be found on the [GitHub repository](https://
 ## Further information
 This project was done as my "Maturitätsarbeit" (kind of a final thesis or project) at the school I was going to.
 
-### Credits
+## Credits
 
 ::: projectul 
 - Voice Acting: Selma Schwager (german), Liv Weiss (english)
 - Supervision: Hanspeter Siegfried, Deborah Signer
-- Hand 3D model created by SuperDasil
+- [Hand 3D model](https://www.blendswap.com/blend/16177) created by SuperDasil
 - Chair and table 3D models are based on models from Vitra.
 - Sink and toilets are from Kohler.
 :::

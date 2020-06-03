@@ -29,7 +29,7 @@
     </ul> -->
 
     <h3 id="cgbookcase">cgbookcase.com</h3>
-    <p class="narrow">There that burned till as uncertain that my. The and nevermore burden wretch wondering no raven a, back there the if soul only. This the of cushioned i, unseen human not upon answer unseen nevermore bird not leave. Broken out air with but there.</p>
+    <p class="narrow">cgbookcase.com is an online library of PBR textures for 3D artists that I run. The textures are available for free under the Creative Commons 0 (CC0) license, which means anyone can use them for anything they want, even commercially. The project is backed by patrons, but I will soon start to offer some paid scanned 3D models as well.</p>
     <ProjectList :array="$page.cgbPosts.edges" :startIndex="0"/>
     
     <h3 id="3d">3D Renderings</h3>
@@ -100,11 +100,11 @@ query ProjectPosts {
       }
     }
   },
-  cgbPosts: allProjectPost(filter: {category: {eq: "cgbookcase"}}) {
+  cgbPosts: allProjectPost(filter: {category: {eq: "cgbookcase"}}, sortBy: "importance", order: DESC) {
     edges {
       node {
         title
-        slug
+        description
         content
         category
         path
@@ -116,7 +116,7 @@ query ProjectPosts {
     edges {
       node {
         title
-        slug
+        description
         content
         category
         path
@@ -128,7 +128,7 @@ query ProjectPosts {
     edges {
       node {
         title
-        slug
+        description
         content
         category
         path
@@ -140,7 +140,7 @@ query ProjectPosts {
     edges {
       node {
         title
-        slug
+        description
         content
         category
         path

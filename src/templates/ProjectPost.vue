@@ -159,5 +159,18 @@ img {
     padding-top: 0 !important;
 }
 
+.sidebyside>p {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidebyside > p > img:first-child {
+    margin-right: 7px;
+}
+
+.sidebyside > p > img:last-child {
+    margin-left: 7px;
+}
 </style>
 

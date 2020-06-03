@@ -4,6 +4,7 @@ slug: everydays
 category: 3d
 featuredImage: /uploads/leaves.jpg
 importance: 1
+description: Over the last few years, I've created more than 400 PBR textures and released them to the public domain. The textures are made out of four to six different types of texture maps.
 ---
 
 ## Secondary Heading
