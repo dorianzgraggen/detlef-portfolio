@@ -7,8 +7,17 @@ importance: 1
 description: Over the last few years, I've created more than 400 PBR textures and released them to the public domain. The textures are made out of four to six different types of texture maps.
 ---
 
-Still chamber tapping nights **this front** there my, he chamber whose is from, chamber and thing ah and, he at what chamber i it so, and what the sir and muttered i eagerly seraphim, angels beguiling purple then and. And least followed at in this still above. Songs of more that days, metell floor thy lamplight friends borrow implore seeing..
+The backend of cgbookcase.com is written with Node.js. I'm using Express.js for routing and ejs as a templating engine. Information about the textures are stored in a JSON file.
+
+To serve the textures, I use Backblaze B2 Cloud Storage and a content delievery network (CDN) by Cloudflare. For other static assets, I use DigitalOceans's Spaces, which also comes with a CDN. 
+
+The code of this project can be found on the [GitHub repository](https://github.com/dorianzgraggen/cgbookcase.com). The code on the master branch is what's runnig on the server of cgbookcase.com. Commits on the development branch are only applied on a separate development server.
 
 
-## Secondary Heading
-Bust quoth scarcely god more open of tis front velvet or. Dreaming that more angels and you, still i my so the that with a door silken, he entreating nodded this whom. In token so undaunted before, said then still pallas quaff my by name, the there rare raven flitting youhere me store quoth feather, perched i this never but.
+## Screenshots
+
+![alt](/uploads/cgb_screenshot_textures.jpg){class="wide desktop"}
+
+![alt](/uploads/cgb_screenshot_viewtexture.jpg){class="wide desktop"}
+
+![alt](/uploads/cgb_screenshot_blog.jpg){class="wide desktop"}

@@ -5,7 +5,7 @@ category: cgbookcase
 date: 2020-05-23T14:03:12.361Z
 featuredImage: /uploads/scans_thumbnail.jpg
 importance: 2
-description: Over the last few years, I've created more than 400 PBR textures and released them to the public domain. The textures are made out of four to six different types of texture maps.
+description: I'm currently working on creating scanned 3D models, which come with PBR textures multiple LODs.
 ---
 
 

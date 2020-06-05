@@ -4,7 +4,7 @@ slug: creating-an-interactive-vr-environment
 category: vr
 featuredImage: /uploads/immersion-thumbnaill.jpg
 importance: 1
-description: Over the last few years, I've created more than 400 PBR textures and released them to the public domain. The textures are made out of four to six different types of texture maps.
+description: Immersion VR is an interactive building inside which the user can move around, change materials and use a lift.
 ---
 import VideoBlock from '~/components/VideoBlock.vue'
 import ImageBlock from '~/components/ImageBlock.vue'
@@ -68,7 +68,7 @@ Here are some screenshots from the building in it's final state. The images are 
 ## Development
 Development was done using Unreal Engine 4 and C++. I had no prior experience working with C++ and almost none using Unreal Engine 4, so this was the most time-consuming part.
 
-The entire code of this project can be found on the [GitHub repository](https://github.com/dorianzgraggen/ImmersionVR) of this project.
+The entire code of this project can be found on it's [GitHub repository](https://github.com/dorianzgraggen/ImmersionVR).
 
 ## Further information
 This project was done as my "Maturitätsarbeit" (kind of a final thesis or project) at the school I was going to.

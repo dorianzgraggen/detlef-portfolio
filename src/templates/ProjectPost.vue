@@ -167,10 +167,20 @@ img {
 
 .sidebyside > p > img:first-child {
     margin-right: 7px;
+    width: 50%;
 }
 
 .sidebyside > p > img:last-child {
     margin-left: 7px;
+    width: 50%;
+}
+
+.grid2 > p {
+    width: 100%;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 8px;
 }
 </style>
 

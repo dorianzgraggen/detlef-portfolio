@@ -36,7 +36,6 @@
     <ProjectList :array="$page.renderingPosts.edges" :startIndex="$page.cgbPosts.edges.length"/>
     
     <h3 id="vr">Virtual Reality</h3>
-    <p class="narrow">Door whether much of a what cushioned of whom that but, broken chamber one said the name raven this hear. Bird the sorrowsorrow ominous burden chamber token broken. And a whose word morrow tinkled chamber. Of on fancy no tapping me shutter ember, gaunt ghastly.</p>
     <ProjectList :array="$page.vrPosts.edges" :startIndex="$page.cgbPosts.edges.length + $page.renderingPosts.edges.length"/>
     
     <h3 id="more">More</h3>
@@ -112,7 +111,7 @@ query ProjectPosts {
       }
     }
   },
-  renderingPosts: allProjectPost(filter: {category: {eq: "3d"}}) {
+  renderingPosts: allProjectPost(filter: {category: {eq: "3d"}}, sortBy: "importance", order: DESC) {
     edges {
       node {
         title
@@ -124,7 +123,7 @@ query ProjectPosts {
       }
     }
   },
-  vrPosts: allProjectPost(filter: {category: {eq: "vr"}}) {
+  vrPosts: allProjectPost(filter: {category: {eq: "vr"}}, sortBy: "importance", order: DESC) {
     edges {
       node {
         title
@@ -136,7 +135,7 @@ query ProjectPosts {
       }
     }
   },
-  morePosts: allProjectPost(filter: {category: {eq: "more"}}) {
+  morePosts: allProjectPost(filter: {category: {eq: "more"}}, sortBy: "importance", order: DESC) {
     edges {
       node {
         title

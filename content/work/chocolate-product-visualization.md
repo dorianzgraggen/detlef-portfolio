@@ -5,7 +5,7 @@ slug: chocolate-product-visualization
 date: 2020-05-25T18:25:00.592Z
 featuredImage: /uploads/schoggi.jpg
 importance: 1
-description: Over the last few years, I've created more than 400 PBR textures and released them to the public domain. The textures are made out of four to six different types of texture maps.
+description: I really like eating chocolate, so creating some in 3D was only a matter of time.
 ---
 I really like eating chocolate, so creating some in 3D was only a matter of time. Modeling, shading, lighting and rendering was done using Blender.
 
