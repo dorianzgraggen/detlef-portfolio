@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  name: 'VideoBlock',
+  name: 'ImageBlock',
   props: ['image', 'onLeftSide', 'title', 'desc'],
   data () {
     return {

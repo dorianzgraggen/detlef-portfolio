@@ -6,6 +6,8 @@
     <div id="start-thing" class="narrow">
       
       <div id="start-3d-scene">
+        <ThreeScene />
+
       </div>
       <div id="start-desc">
         <span>
@@ -156,6 +158,7 @@ query ProjectPosts {
 
 <script>
 import ProjectList from '~/components/ProjectList.vue'
+import ThreeScene from '~/components/ThreeScene.vue'
 
 
 
@@ -167,7 +170,8 @@ export default {
     title: 'Hello, world!'
   },
   components: {
-    ProjectList
+    ProjectList: ProjectList,
+    ThreeScene: ThreeScene
   },
   data () {
     return {

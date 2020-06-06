@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: 'VideoBlock',
+  name: 'ImageGrid',
   props: ['name', 'first', 'last', 'suffix'],
   methods: {
   },
