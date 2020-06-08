@@ -11,7 +11,7 @@
       </div>
       <div id="start-desc">
         <span>
-        Hey, I'm <strong>Dorian Zgraggen</strong>. <br>I run <a href="/#cgbookcase" data-color="red">cgbookcase.com</a> and create <br><a href="/#3d" data-color="yellow">3D Renderings</a>, <a href="/#vr"  data-color="green">VR stuff</a> and <a href="/#more" data-color="blue">more</a>.
+        Hey, I'm <strong>Dorian Zgraggen</strong>. <br>I run <a id="hash-cgb" href="/#cgbookcase" data-color="red">cgbookcase.com</a> and create <br><a id="hash-3d" href="/#3d" data-color="yellow">3D Renderings</a>, <a id="hash-vr" href="/#vr"  data-color="green">VR stuff</a> and <a id="hash-more" href="/#more" data-color="blue">more</a>.
         </span>
       </div>
     </div>
