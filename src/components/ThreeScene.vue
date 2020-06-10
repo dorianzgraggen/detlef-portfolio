@@ -28,6 +28,9 @@ export default {
     }
   },
   mounted() {
+    
+    var bCubeIsSolved = false;
+    var bCurrentlySolving = false;
     var startRotation = new THREE.Quaternion();
     var endRotation = new THREE.Quaternion();
     var duration = 4;
@@ -148,7 +151,7 @@ export default {
     var group = new THREE.Group();
     loader.load(
         
-        '/3d/rubiks_textured_2.glb',
+        '/3d/rubiks_textured_new.gltf',
 
         function ( gltf ) {
 
@@ -292,14 +295,24 @@ export default {
     }
 
     function startSolving() {
-        
+        bCurrentlySolving = true;
         bRotateToFace = true;
         runSolveStep();
     }
 
     function runSolveStep() {
         currentStep--;
-        if (currentStep < 0) return;
+        if (currentStep < 0) {
+            bRotateWhileSolving = false;
+            bCubeIsSolved = true;
+            bCurrentlySolving = false;
+            return;
+        }
+        if (currentStep == 1) {
+            // bRotateWhileSolving = true;
+            // rotWhileSolvStep = 5 * delta;
+        }
+        
         console.log(currentStep);
 
         allCublets.forEach(cublet => {
@@ -329,15 +342,37 @@ export default {
         bMoveGroupBack = true;
     }
 
+    let stopRot = false;
+    let bRotateWhileSolving = false;
+    let rotWhileSolvStep = 0;
+
+    function rotateTo(num) {
+        let rot = group.rotation.y;
+        let goalRot = Math.PI * 2;
+        stopRot = ( (Math.floor(rot / goalRot) + 1) * goalRot );
+        console.log(rot)
+        console.log(stopRot)
+
+        
+
+        stopRot += Math.PI / 2 * num;
+
+        if (stopRot - rot > Math.PI * 2) {
+            stopRot -= Math.PI * 2;
+        }
+
+    }
+
     function handleKeys(e) {
 
         if (e.key == "d") {
             console.log(renderer.info.render);
+            renderer.antialias = false;
         }
 
-         if (e.key == "l") {
-             console.log(allCublets)
-         }
+        if (e.key == "q") {
+            rotateTo(1);
+        }
 
         if (e.key == "n") {
             console.log(group.children)
@@ -409,12 +444,56 @@ export default {
 
         if (e.key == "s") {
             startSolving();
-            
+            // let rot = group.rotation.y;
+            // let goalRot = Math.PI * 2;
+            // let newStopRot = ( (Math.floor(rot / goalRot) + 1) * goalRot )
+            // console.log(rot)
+            // console.log(newStopRot)
+            // rotWhileSolvStep = (newStopRot - rot) / 24 / 10;
+
+            // bRotateWhileSolving = true;
+
         }
     }
 
 
-    document.body.querySelector("#hash-cgb").addEventListener('mouseover', startSolving);
+    document.body.querySelector("#hash-cgb").addEventListener('mouseover', () => {
+        if(bCurrentlySolving) return;
+        (bCubeIsSolved) ? rotateTo(0) : startSolving()
+    });
+    document.body.querySelector("#hash-3d").addEventListener('mouseover', () => {
+        if(bCurrentlySolving) return;
+        (bCubeIsSolved) ? rotateTo(2) : startSolving()
+    });
+    document.body.querySelector("#hash-vr").addEventListener('mouseover', () => {
+        if(bCurrentlySolving) return;
+        (bCubeIsSolved) ? rotateTo(3) : startSolving()
+    });
+    document.body.querySelector("#hash-more").addEventListener('mouseover', () => {
+        if(bCurrentlySolving) return;
+        (bCubeIsSolved) ? rotateTo(1) : startSolving()
+    });
+
+    document.body.querySelector("#hash-cgb").addEventListener('mouseout', () => {
+        if(bCurrentlySolving) return;
+        if (bCubeIsSolved) stopRot = false;
+    });
+
+    document.body.querySelector("#hash-3d").addEventListener('mouseout', () => {
+        if(bCurrentlySolving) return;
+        if (bCubeIsSolved) stopRot = false;
+    });
+
+    document.body.querySelector("#hash-vr").addEventListener('mouseout', () => {
+        if(bCurrentlySolving) return;
+        if (bCubeIsSolved) stopRot = false;
+    });
+
+    document.body.querySelector("#hash-more").addEventListener('mouseout', () => {
+        if(bCurrentlySolving) return;
+        if (bCubeIsSolved) stopRot = false;
+    });
+
 
 
     function resizeRendererToDisplaySize(renderer) {
@@ -464,6 +543,7 @@ export default {
             rotationGroup.rotation[axis] -= THREE.Math.degToRad(direction) / 10;   
 
             
+            
             if (moveBackStep >= 10) {
                 console.log("ended")
                 bMoveGroupBack = false;
@@ -490,10 +570,24 @@ export default {
         }
 
         if (bModelLoaded) {
-            group.rotation.y += 0.5 * delta;
             camera.position.y = 1 * Math.sin(.3 * time);
 
+
+            if (stopRot == false && !bRotateWhileSolving) {
+
+                group.rotation.y += 0.5 * delta;
+            
+            } else if (group.rotation.y < stopRot) {
+                group.rotation.y += 16 * delta;
+                
+            }
+            // console.log(group.rotation.y)
+
+            if (bRotateWhileSolving) {
+                group.rotation.y += rotWhileSolvStep;
+            }
         }
+
 
         controls.update();
 
@@ -513,7 +607,6 @@ export default {
 <style>
 .three-container {
   /* padding: 20px; */
-  background: red;
   height: 100%;
   width: 100%;
 }

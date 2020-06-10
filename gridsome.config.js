@@ -6,6 +6,8 @@
 
 module.exports = {
   siteName: 'Dorian Zgraggen',
+  siteUrl: 'https://www.dorianzgraggen.com',
+  siteDescription: "Hey, I'm Dorian Zgraggen. I run cgbookcase.com, a website with PBR textures and scanned 3D models. I create 3D Renderings, develop VR stuff and design websites",
   plugins: [
     {
       use: '@gridsome/source-filesystem',

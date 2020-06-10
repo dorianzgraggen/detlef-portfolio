@@ -21,7 +21,8 @@
 <static-query>
 query {
   metadata {
-    siteName
+    siteName,
+    siteDescription
   }
 }
 </static-query>
@@ -182,9 +183,17 @@ iframe {
   border: none;
 }
 
-@media only screen and (max-width: 1060px) {
+@media only screen and (max-width: 1060px) and (min-width: 600px) {
   header {
     height: 60px !important;
+  }
+  
+}
+
+@media only screen and (max-width: 600px) {
+  .layout {
+    padding-left: 12px;
+    padding-right: 12px;
   }
   
 }

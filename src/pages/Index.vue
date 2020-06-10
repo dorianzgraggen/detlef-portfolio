@@ -52,7 +52,9 @@
         
           <a :href="post.node.link" target="_blank" class="linkpost">
             <div style="display: flex; overflow: hidden;">
-              <g-image :src="post.node.favicon"></g-image>
+              <div>
+                <g-image :src="post.node.favicon"></g-image>
+              </div>
               <span class="link-title">
                 <span class="truncated">{{ post.node.title}}</span>
                
@@ -167,7 +169,10 @@ import ThreeScene from '~/components/ThreeScene.vue'
 
 export default {
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'D',
+    meta: [
+      { name: 'description', content: "Hey, I'm Dorian Zgraggen. I run cgbookcase.com, a website with PBR textures and scanned 3D models. I create 3D Renderings, develop VR stuff and design websites"}
+    ]
   },
   components: {
     ProjectList: ProjectList,
@@ -190,6 +195,11 @@ export default {
         "Dec"
       ]
     }
+  },
+  mounted() {
+    document.querySelector(".header").style.height = (window.innerHeight * 0.1).toString() + "px";
+    document.querySelector("#start-thing").style.height = (window.innerHeight * 0.9).toString() + "px";
+    document.querySelector("#start-3d-scene ").style.height = (window.innerHeight * 0.9 - 120).toString() + "px";
   }
  
 }
@@ -268,7 +278,7 @@ h3, h2 {
   text-align: center;
 }
 
-ul>li>a>div>img {
+ul>li>a>div>div>img {
   width: 30px;
   height: 30px;
   margin: 4px 0px 4px 6px;
@@ -348,6 +358,70 @@ ul>li>a>div>img {
 .socialmedia-container > a {
   background: none;
   border: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .portfolio-item {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
+  .desc-container {
+    width: 100%;
+  }
+  .thumb-container {
+    width: 100%;
+  }
+
+  .thumb-container .g-image {
+    width: 100%;
+  }
+
+  .project-1 {
+    flex-direction: column-reverse;
+  }
+
+  .linkpost {
+    height: 80px;
+    background: #3e4a6b31;
+    margin: 5px 0;
+  }
+
+  ul > li > a > div > div > img {
+    width: 40px;
+    height: 40px;
+    margin: 20px 10px 20px 15px;
+    display: block;
+  }
+
+  .truncated {
+   white-space: initial !important;
+    overflow: hidden;
+  }
+
+  .link-date {
+    display: none !important;
+  }
+
+
+
+  /* RUBIKS CUBE */
+  #start-thing {
+    flex-wrap: wrap;
+  }
+
+  #start-3d-scene {
+    width: 100%;
+    /* height: unset; */
+  }
+  
+  #start-desc {
+    width: 100%;
+    align-items: unset;
+  }
+  
+  .header {
+    margin-bottom: 0px;
+  }
 }
 
 </style>
