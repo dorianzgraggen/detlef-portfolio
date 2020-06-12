@@ -73,52 +73,62 @@ export default {
     var loader = new GLTFLoader();
 
 
-    {
-        const color = 0xFFFFFF;
-        const intensity = 1;
-        const light = new THREE.DirectionalLight(color, intensity);
-        light.position.set(-1, 1, 1);
-        scene.add(light);
+  
+    if (window.innerWidth <= 600) {
+        {
+            const light = new THREE.HemisphereLight( 0xffffff, 0x080808, 6 );
+            scene.add( light );
+        }
+    } else {
+        {
+            const color = 0xFFFFFF;
+            const intensity = 1;
+            const light = new THREE.DirectionalLight(color, intensity);
+            light.position.set(-1, 1, 1);
+            scene.add(light);
+        }
+        {
+            const color = 0xFFFFFF;
+            const intensity = 1;
+            const light = new THREE.DirectionalLight(color, intensity);
+            light.position.set(1, 1, 1);
+            scene.add(light);
+        }
+        {
+            const color = 0xFFFFFF;
+            const intensity = 1;
+            const light = new THREE.DirectionalLight(color, intensity);
+            light.position.set(1,1, -1);
+            scene.add(light);
+        }
+        {
+            const color = 0xFFFFFF;
+            const intensity = 1;
+            const light = new THREE.DirectionalLight(color, intensity);
+            light.position.set(-1, 2, 4);
+            scene.add(light);
+        }
+        {
+            const color = 0xFFFFFF;
+            const intensity = 1;
+            const light = new THREE.DirectionalLight(color, intensity);
+            light.position.set(1, 2, 4);
+            scene.add(light);
+        }
+        {
+            const color = 0xFFFFFF;
+            const intensity = 1;
+            const light = new THREE.DirectionalLight(color, intensity);
+            light.position.set(1, 2, -4);
+            scene.add(light);
+        }
     }
-    {
-        const color = 0xFFFFFF;
-        const intensity = 1;
-        const light = new THREE.DirectionalLight(color, intensity);
-        light.position.set(1, 1, 1);
-        scene.add(light);
-    }
-    {
-        const color = 0xFFFFFF;
-        const intensity = 1;
-        const light = new THREE.DirectionalLight(color, intensity);
-        light.position.set(1,1, -1);
-        scene.add(light);
-    }
-    {
-        const color = 0xFFFFFF;
-        const intensity = 1;
-        const light = new THREE.DirectionalLight(color, intensity);
-        light.position.set(-1, 2, 4);
-        scene.add(light);
-    }
-    {
-        const color = 0xFFFFFF;
-        const intensity = 1;
-        const light = new THREE.DirectionalLight(color, intensity);
-        light.position.set(1, 2, 4);
-        scene.add(light);
-    }
-    {
-        const color = 0xFFFFFF;
-        const intensity = 1;
-        const light = new THREE.DirectionalLight(color, intensity);
-        light.position.set(1, 2, -4);
-        scene.add(light);
-    }
+   
     {
         const light = new THREE.AmbientLight( 0xffffff, 0.5 ); // soft white light
         scene.add( light );
     }
+    
 
 
     const boxWidth = 1;
@@ -151,7 +161,7 @@ export default {
     var group = new THREE.Group();
     loader.load(
         
-        '/3d/rubiks_textured_optimized.gltf',
+        '/3d/rubiks_textured_optimized_noRoughness.glb',
 
         function ( gltf ) {
 

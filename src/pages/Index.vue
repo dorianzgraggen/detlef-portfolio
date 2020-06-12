@@ -201,6 +201,25 @@ export default {
           behavior: 'smooth' 
         })
     }
+
+
+    if (window.innerWidth <= 600) {
+      document.querySelector("#start-thing").style.height = (window.innerHeight - 50) + "px";
+      document.querySelector("#start-thing").style.marginBottom = "50px";
+
+    //   console.log("smol")
+    //   document.querySelector(".header").style.background = "red";
+    //   document.querySelector(".header").style.height = "60px";
+    //   document.querySelector("#start-thing").style.marginBottom = "90px";
+    //   // document.querySelector("#start-thing").style.height = (window.innerWidth).toString() + "px";
+    //   document.querySelector("#start-3d-scene").style.height = ((window.innerHeight - 60 - 110) * 1).toString() + "px";
+    //   document.querySelector("#start-3d-scene").style.padding = "0";
+    //   document.querySelector(".three-container").style.height = (window.innerWidth).toString() + "px";
+    //   document.querySelector(".three-container").style.margin = (((window.innerHeight - 60 - 140) - window.innerWidth) / 2).toString() + "px 0";
+    //   document.querySelector("#start-desc").style.height = "110px";
+
+    //   // document.querySelector("#start-3d-scene").style.padding = "20px 0";
+    }
   },
   methods: {
     smoothlyScrollTo(identifier) {
@@ -214,18 +233,6 @@ export default {
       }
 
     }
-  },
-  mounted() {
-    if (window.innerWidth <= 600) {
-      console.log("smol")
-      document.querySelector(".header").style.background = "red";
-      document.querySelector(".header").style.height = "60px";
-      document.querySelector("#start-thing ").style.marginBottom = "90px";
-      // document.querySelector("#start-thing").style.height = (window.innerWidth).toString() + "px";
-      document.querySelector("#start-3d-scene ").style.height = (window.innerWidth).toString() + "px";
-      document.querySelector("#start-3d-scene ").style.padding = "20px 0";
-    }
-
   }
  
 }
@@ -449,11 +456,19 @@ ul>li>a>div>div>img {
   
   #start-desc {
     width: 100%;
-    align-items: unset;
+    /* align-items: unset; */
   }
   
   .header {
     margin-bottom: 0px;
+  }
+
+  #start-3d-scene {
+    display: none;
+  }
+
+  .header {
+    height: 50px;
   }
 }
 
