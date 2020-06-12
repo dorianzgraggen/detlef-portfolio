@@ -12,6 +12,14 @@ export default function (Vue, { router, head, isClient }) {
 
   head.htmlAttrs = { lang: 'en' }
 
+  // function smoothlyScrollTo(identifier) {
+  //   // document.querySelector('identifier').scrollIntoView({ 
+  //   //   behavior: 'smooth' 
+  //   // });
+
+  //   console.log("ahoiii !!")
+  // }
+
     // Add Google Font
     // head.link.push({
     //   rel: 'stylesheet',

@@ -5,9 +5,9 @@
         <g-link to="/" id="logo">{{ $static.metadata.siteName }}</g-link>
       </strong>
       <nav class="nav">
-        <a class="nav__link" href="/#work">Work</a>
-        <a class="nav__link" href="/#posts">Posts</a>
-        <a class="nav__link" href="/#about">About</a>
+        <a class="nav__link" @click="smoothlyScrollTo('#work')">Work</a>
+        <a class="nav__link" @click="smoothlyScrollTo('#posts')">Posts</a>
+        <a class="nav__link" @click="smoothlyScrollTo('#about')">About</a>
       </nav>
     </header>
     <transition name="fade" appear>
@@ -26,6 +26,26 @@ query {
   }
 }
 </static-query>
+
+
+<script>
+export default {
+   methods: {
+    smoothlyScrollTo(identifier) {
+      console.log()
+      if(window.location.pathname == "/") {
+        document.querySelector(identifier).scrollIntoView({ 
+          behavior: 'smooth' 
+        })
+      } else {
+        window.location.href = window.location.origin + "/" + identifier;
+      }
+
+    }
+  },
+  
+}
+</script>
 
 <style>
 ::-webkit-scrollbar {
@@ -123,6 +143,8 @@ a:hover {
 
 .nav__link, #logo {
   background: none;
+  border: none;
+  cursor: pointer;
 }
 
 a:visited {
@@ -152,6 +174,10 @@ a:visited {
 
 .nav__link {
   margin-left: 20px;
+}
+
+.nav__link:hover {
+  background: none;
 }
 
 /* Scroll bar jump thing */

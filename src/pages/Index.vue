@@ -11,7 +11,7 @@
       </div>
       <div id="start-desc">
         <span>
-        Hey, I'm <strong>Dorian Zgraggen</strong>. <br>I run <a id="hash-cgb" href="/#cgbookcase" data-color="red">cgbookcase.com</a> and create <br><a id="hash-3d" href="/#3d" data-color="yellow">3D Renderings</a>, <a id="hash-vr" href="/#vr"  data-color="green">VR stuff</a> and <a id="hash-more" href="/#more" data-color="blue">more</a>.
+        Hey, I'm <strong>Dorian Zgraggen</strong>. <br>I run <a @click="smoothlyScrollTo('#cgbookcase')" id="hash-cgb" data-color="red">cgbookcase.com</a> and create <br><a id="hash-3d" @click="smoothlyScrollTo('#3d')" data-color="yellow">3D Renderings</a>, <a id="hash-vr" @click="smoothlyScrollTo('#vr')"  data-color="green">VR stuff</a> and <a id="hash-more" @click="smoothlyScrollTo('#more')" data-color="blue">more</a>.
         </span>
       </div>
     </div>
@@ -162,14 +162,12 @@ query ProjectPosts {
 import ProjectList from '~/components/ProjectList.vue'
 import ThreeScene from '~/components/ThreeScene.vue'
 
-
-
 // var months = [ "January", "February", "March", "April", "May", "June", 
 //            "July", "August", "September", "October", "November", "December" ];
 
 export default {
   metaInfo: {
-    title: 'D',
+    title: 'Home  ',
     meta: [
       { name: 'description', content: "Hey, I'm Dorian Zgraggen. I run cgbookcase.com, a website with PBR textures and scanned 3D models. I create 3D Renderings, develop VR stuff and design websites"}
     ]
@@ -197,9 +195,37 @@ export default {
     }
   },
   mounted() {
-    document.querySelector(".header").style.height = (window.innerHeight * 0.1).toString() + "px";
-    document.querySelector("#start-thing").style.height = (window.innerHeight * 0.9).toString() + "px";
-    document.querySelector("#start-3d-scene ").style.height = (window.innerHeight * 0.9 - 120).toString() + "px";
+    console.log(window.location.hash);
+    if (window.location.hash != "") {
+      document.querySelector(window.location.hash).scrollIntoView({ 
+          behavior: 'smooth' 
+        })
+    }
+  },
+  methods: {
+    smoothlyScrollTo(identifier) {
+      console.log()
+      if(window.location.pathname == "/") {
+        document.querySelector(identifier).scrollIntoView({ 
+          behavior: 'smooth' 
+        })
+      } else {
+        window.location.href = window.location.origin + "/" + identifier;
+      }
+
+    }
+  },
+  mounted() {
+    if (window.innerWidth <= 600) {
+      console.log("smol")
+      document.querySelector(".header").style.background = "red";
+      document.querySelector(".header").style.height = "60px";
+      document.querySelector("#start-thing ").style.marginBottom = "90px";
+      // document.querySelector("#start-thing").style.height = (window.innerWidth).toString() + "px";
+      document.querySelector("#start-3d-scene ").style.height = (window.innerWidth).toString() + "px";
+      document.querySelector("#start-3d-scene ").style.padding = "20px 0";
+    }
+
   }
  
 }
@@ -219,7 +245,9 @@ export default {
 
 #start-3d-scene {
   width: 50%;
-  height: 500px
+  height: 500px;
+  height: 400px;
+  padding: 50px 0;
 }
 
 #start-desc {
@@ -236,42 +264,47 @@ export default {
   transition-duration: .15s;
   /* color: white; */
   /* text-decoration: underline #a9c5ff; */
+  cursor: pointer;
 }
 
 a[data-color="red"] {
   border-bottom-color: #ef476fcc;
+  color:  #ef476f;
 }
 
 
 a[data-color="red"]:hover {
-  color:  #ef476f;
+  background: #ef476e5e;
 }
 
 a[data-color="yellow"] {
   border-bottom-color: #ffd166dd;
+  color:  #ffd166;
 }
 
 
 a[data-color="yellow"]:hover {
-  color:  #ffd166;
+  background:  #ffd16667;
 }
 
 a[data-color="green"] {
   border-bottom-color: #06d6a0cc;
+  color:  #06d6a0;
 }
 
 
 a[data-color="green"]:hover {
-  color:  #06d6a0;
+  background:  #06d69e67;
 }
 
 a[data-color="blue"] {
-  border-bottom-color: #118ab2cc
+  border-bottom-color: #14a3d3cc;
+  color:  #14a3d3;
 }
 
 
 a[data-color="blue"]:hover {
-  color:  #118ab2;
+  background:  #14a3d35e;
 }
   
 h3, h2 {

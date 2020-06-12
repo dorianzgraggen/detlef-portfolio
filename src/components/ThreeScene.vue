@@ -45,7 +45,7 @@ export default {
     // renderer.shadowMap.update = false;
     // renderer.shadowMap.type = THREE.BasicShadowMap;
 
-    const fov = 25;
+    const fov = 18;
     const aspect = 2;  // the canvas default
     const near = 2;
     const far = 7;
@@ -151,7 +151,7 @@ export default {
     var group = new THREE.Group();
     loader.load(
         
-        '/3d/rubiks_textured_new.gltf',
+        '/3d/rubiks_textured_optimized.gltf',
 
         function ( gltf ) {
 
@@ -295,6 +295,8 @@ export default {
     }
 
     function startSolving() {
+        document.body.querySelector(".three-container").style.cursor = "default";
+
         bCurrentlySolving = true;
         bRotateToFace = true;
         runSolveStep();
@@ -313,7 +315,7 @@ export default {
             // rotWhileSolvStep = 5 * delta;
         }
         
-        console.log(currentStep);
+        // console.log(currentStep);
 
         allCublets.forEach(cublet => {
             let conditions = [
@@ -330,7 +332,7 @@ export default {
             
             if (conditions[steps[currentStep].side]) {
 
-                console.log(cublet.name)
+                // console.log(cublet.name)
                 //console.log(axis)
 
                 moveBackCublets.push(cublet);
@@ -367,7 +369,6 @@ export default {
 
         if (e.key == "d") {
             console.log(renderer.info.render);
-            renderer.antialias = false;
         }
 
         if (e.key == "q") {
@@ -494,6 +495,12 @@ export default {
         if (bCubeIsSolved) stopRot = false;
     });
 
+    document.body.querySelector(".three-container").addEventListener('click', () => {
+        if (bCubeIsSolved || bCurrentlySolving) return;
+
+        startSolving();
+
+    })
 
 
     function resizeRendererToDisplaySize(renderer) {
@@ -545,7 +552,7 @@ export default {
             
             
             if (moveBackStep >= 10) {
-                console.log("ended")
+                // console.log("ended")
                 bMoveGroupBack = false;
                 moveBackStep = 1;
                 moveBackCublets.forEach(cublet => {
@@ -609,6 +616,7 @@ export default {
   /* padding: 20px; */
   height: 100%;
   width: 100%;
+  cursor: pointer;
 }
 
 #c {
