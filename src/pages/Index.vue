@@ -350,6 +350,7 @@ ul>li>a>div>div>img {
 .link-title {
   overflow: hidden;
   text-overflow: ellipsis;
+  width: 100%;
    /* border-bottom: 2px solid rgba(255, 255, 255, 0.39); */
 }
 
@@ -422,8 +423,12 @@ ul>li>a>div>div>img {
 
   .linkpost {
     height: 80px;
-    background: #3e4a6b31;
+    /* background: #3e4a6b31; */
     margin: 5px 0;
+  }
+
+  .linkpost:hover {
+    background: none;
   }
 
   ul > li > a > div > div > img {
@@ -467,9 +472,7 @@ ul>li>a>div>div>img {
     display: none;
   }
 
-  .header {
-    height: 50px;
-  }
+  
 }
 
 </style>

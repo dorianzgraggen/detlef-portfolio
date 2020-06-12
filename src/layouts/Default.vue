@@ -221,6 +221,16 @@ iframe {
     padding-left: 12px;
     padding-right: 12px;
   }
+
+  .wide {
+    width: 100% !important; 
+    margin-left: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .header {
+    height: 50px;
+  }
   
 }
 
