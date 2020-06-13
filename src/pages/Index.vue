@@ -11,7 +11,7 @@
       </div>
       <div id="start-desc">
         <span>
-        Hey, I'm <strong>Dorian Zgraggen</strong>. <br>I run <a @click="smoothlyScrollTo('#cgbookcase')" id="hash-cgb" data-color="red">cgbookcase.com</a> and create <br><a id="hash-3d" @click="smoothlyScrollTo('#3d')" data-color="yellow">3D Renderings</a>, <a id="hash-vr" @click="smoothlyScrollTo('#vr')"  data-color="green">VR stuff</a> and <a id="hash-more" @click="smoothlyScrollTo('#more')" data-color="blue">more</a>.
+        Hey, I'm <strong>Dorian Zgraggen</strong>. <br>I run <button @click="smoothlyScrollTo('#cgbookcase')" id="hash-cgb" data-color="red">cgbookcase.com</button> and create <br><button id="hash-3d" @click="smoothlyScrollTo('#3d')" data-color="yellow">3D Renderings</button>, <button id="hash-vr" @click="smoothlyScrollTo('#vr')"  data-color="green">VR stuff</button> and <button id="hash-more" @click="smoothlyScrollTo('#more')" data-color="blue">more</button>.
         </span>
       </div>
     </div>
@@ -274,44 +274,55 @@ export default {
   cursor: pointer;
 }
 
-a[data-color="red"] {
+#start-desc button {
+  background: #03060C;
+  border: none;
+  border-bottom: 2px solid;
+  font-size: inherit;
+  margin: 0;
+  padding: 0; 
+  cursor: pointer;
+  transition-duration: .15s;
+}
+
+button[data-color="red"] {
   border-bottom-color: #ef476fcc;
   color:  #ef476f;
 }
 
 
-a[data-color="red"]:hover {
-  background: #ef476e5e;
+button[data-color="red"]:hover {
+  background: #ef476e5e !important;
 }
 
-a[data-color="yellow"] {
+button[data-color="yellow"] {
   border-bottom-color: #ffd166dd;
   color:  #ffd166;
 }
 
 
-a[data-color="yellow"]:hover {
-  background:  #ffd16667;
+button[data-color="yellow"]:hover {
+  background:  #ffd16667 !important;
 }
 
-a[data-color="green"] {
+button[data-color="green"] {
   border-bottom-color: #06d6a0cc;
   color:  #06d6a0;
 }
 
 
-a[data-color="green"]:hover {
-  background:  #06d69e67;
+button[data-color="green"]:hover {
+  background:  #06d69e67 !important;
 }
 
-a[data-color="blue"] {
+button[data-color="blue"] {
   border-bottom-color: #14a3d3cc;
   color:  #14a3d3;
 }
 
 
-a[data-color="blue"]:hover {
-  background:  #14a3d35e;
+button[data-color="blue"]:hover {
+  background:  #14a3d35e !important;
 }
   
 h3, h2 {
@@ -475,6 +486,9 @@ ul>li>a>div>div>img {
     display: none;
   }
 
+  .desc-container > span > a > h4 {
+    margin-top: 12px !important;
+  }
   
 }
 

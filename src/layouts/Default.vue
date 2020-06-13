@@ -5,9 +5,9 @@
         <g-link to="/" id="logo">{{ $static.metadata.siteName }}</g-link>
       </strong>
       <nav class="nav">
-        <a class="nav__link" @click="smoothlyScrollTo('#work')">Work</a>
-        <a class="nav__link" @click="smoothlyScrollTo('#posts')">Posts</a>
-        <a class="nav__link" @click="smoothlyScrollTo('#about')">About</a>
+        <button class="nav__link" @click="smoothlyScrollTo('#work')">Work</button>
+        <button class="nav__link" @click="smoothlyScrollTo('#posts')">Posts</button>
+        <button class="nav__link" @click="smoothlyScrollTo('#about')">About</button>
       </nav>
     </header>
     <transition name="fade" appear>
@@ -77,6 +77,16 @@ body {
   /* min-height: 100vh; */
   background-color: #03060C;
   color: white;
+}
+
+button {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  margin:0;
+  padding:0;
+  color: white;
+  font-size: inherit;
+  cursor: pointer;
 }
 
 strong {
