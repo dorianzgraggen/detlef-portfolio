@@ -203,23 +203,23 @@ export default {
     }
 
 
-    if (window.innerWidth <= 600) {
-      document.querySelector("#start-thing").style.height = (window.innerHeight - 50) + "px";
-      document.querySelector("#start-thing").style.marginBottom = "50px";
+    // if (window.innerWidth <= 600) {
+    //   document.querySelector("#start-thing").style.height = (window.innerHeight - 50) + "px";
+    //   document.querySelector("#start-thing").style.marginBottom = "50px";
 
-    //   console.log("smol")
-    //   document.querySelector(".header").style.background = "red";
-    //   document.querySelector(".header").style.height = "60px";
-    //   document.querySelector("#start-thing").style.marginBottom = "90px";
-    //   // document.querySelector("#start-thing").style.height = (window.innerWidth).toString() + "px";
-    //   document.querySelector("#start-3d-scene").style.height = ((window.innerHeight - 60 - 110) * 1).toString() + "px";
-    //   document.querySelector("#start-3d-scene").style.padding = "0";
-    //   document.querySelector(".three-container").style.height = (window.innerWidth).toString() + "px";
-    //   document.querySelector(".three-container").style.margin = (((window.innerHeight - 60 - 140) - window.innerWidth) / 2).toString() + "px 0";
-    //   document.querySelector("#start-desc").style.height = "110px";
+    // //   console.log("smol")
+    // //   document.querySelector(".header").style.background = "red";
+    // //   document.querySelector(".header").style.height = "60px";
+    // //   document.querySelector("#start-thing").style.marginBottom = "90px";
+    // //   // document.querySelector("#start-thing").style.height = (window.innerWidth).toString() + "px";
+    // //   document.querySelector("#start-3d-scene").style.height = ((window.innerHeight - 60 - 110) * 1).toString() + "px";
+    // //   document.querySelector("#start-3d-scene").style.padding = "0";
+    // //   document.querySelector(".three-container").style.height = (window.innerWidth).toString() + "px";
+    // //   document.querySelector(".three-container").style.margin = (((window.innerHeight - 60 - 140) - window.innerWidth) / 2).toString() + "px 0";
+    // //   document.querySelector("#start-desc").style.height = "110px";
 
-    //   // document.querySelector("#start-3d-scene").style.padding = "20px 0";
-    }
+    // //   // document.querySelector("#start-3d-scene").style.padding = "20px 0";
+    // }
   },
   methods: {
     smoothlyScrollTo(identifier) {
@@ -452,6 +452,9 @@ ul>li>a>div>div>img {
   /* RUBIKS CUBE */
   #start-thing {
     flex-wrap: wrap;
+    height: 90vh;
+    height: calc(100vh - 50px);
+    margin-bottom: 50px;
   }
 
   #start-3d-scene {

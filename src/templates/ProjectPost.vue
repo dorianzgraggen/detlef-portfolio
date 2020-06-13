@@ -244,14 +244,14 @@ img {
     }
 
     .video-container {
-        width: 100%;
+        width: 100% !important;
     }
 
     .video-div {
-        width: 100%;
+        width: 100% !important;
     }
     .videoText-container {
-        width: 100%;
+        width: 100% !important;
     }
 
 
