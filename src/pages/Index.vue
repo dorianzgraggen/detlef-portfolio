@@ -11,7 +11,7 @@
       </div>
       <div id="start-desc">
         <span>
-        Hey, I'm <strong>Dorian Zgraggen</strong>. <br>I run <button @click="smoothlyScrollTo('#cgbookcase')" id="hash-cgb" data-color="red">cgbookcase.com</button> and create <br><button id="hash-3d" @click="smoothlyScrollTo('#3d')" data-color="yellow">3D Renderings</button>, <button id="hash-vr" @click="smoothlyScrollTo('#vr')"  data-color="green">VR stuff</button> and <button id="hash-more" @click="smoothlyScrollTo('#more')" data-color="blue">more</button>.
+        Hey, I'm <strong>Dorian Zgraggen</strong>. <br>I run <button @click="smoothlyScrollTo('#cgbookcase')" id="hash-cgb" data-color="red">cgbookcase.com</button> and create <br><button id="hash-3d" @click="smoothlyScrollTo('#renderings')" data-color="yellow">3D Renderings</button>, <button id="hash-vr" @click="smoothlyScrollTo('#vr')"  data-color="green">VR stuff</button> and <button id="hash-more" @click="smoothlyScrollTo('#more')" data-color="blue">more</button>.
         </span>
       </div>
     </div>
@@ -34,7 +34,7 @@
     <p class="narrow">cgbookcase.com is an online library of PBR textures for 3D artists that I run. The textures are available for free under the Creative Commons 0 (CC0) license, which means anyone can use them for anything they want, even commercially. The project is backed by patrons, but I will soon start to offer some paid scanned 3D models as well.</p>
     <ProjectList :array="$page.cgbPosts.edges" :startIndex="0"/>
     
-    <h3 id="3d">3D Renderings</h3>
+    <h3 id="renderings">3D Renderings</h3>
     <ProjectList :array="$page.renderingPosts.edges" :startIndex="$page.cgbPosts.edges.length"/>
     
     <h3 id="vr">Virtual Reality</h3>
@@ -75,7 +75,8 @@
     <section class="narrow">
     
       <h2 id="about">About</h2>
-      <p>Thy bird nevermore that raven for my at. Velvet grim blessed at it, from now nevermore followed till thy mien shorn the i, a faintly laden rare some and. And lordly it meaninglittle here this muttered by. Said i or.</p>
+      <p>I like to code and design cool things, that's pretty much it. I'm very soon starting an internship at <a href="https://www.raumgleiter.com/" target="_blank">Raumgleiter</a>. If you want to work together on a project, feel free to contact me:</p>
+      <p class="text-center">dorian at dorianzgraggen dot com</p>
     </section>
 
     <div class="socialmedia-container">

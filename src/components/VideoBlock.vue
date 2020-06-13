@@ -14,11 +14,11 @@
         </button>
 
         <button v-show="!firstplay && !playing && !ended" class="play-btn" v-on:click="play">
-          <img src="/uploads/play-solid.svg" alt="" class="play-svg">
+          <img src="/uploads/play-solid.svg" alt="" style="width: 55%" class="play-svg">
         </button>
 
          <button v-show="playing && !ended" class="pause-btn" v-on:click="pause">
-          <img src="/uploads/pause-solid.svg" alt="" class="pause-svg">
+          <img src="/uploads/pause-solid.svg" alt="" style="width: 55%" class="pause-svg">
         </button>
 
          <button v-show="ended" class="video-btn-center" v-on:click="replay">
@@ -199,12 +199,12 @@ video {
 
 .play-svg {
   filter: invert(1);
-  width: 100%;
+  width: 65%;
 }
 
 .pause-svg {
   filter: invert(1);
-  width: 100%;
+  width: 65%;
 }
 
 .pause-btn {

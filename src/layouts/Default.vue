@@ -3,6 +3,7 @@
     <header class="header">
       <strong>
         <g-link to="/" id="logo">{{ $static.metadata.siteName }}</g-link>
+        <g-link to="/" id="logo-short">DZ</g-link>
       </strong>
       <nav class="nav">
         <button class="nav__link" @click="smoothlyScrollTo('#work')">Work</button>
@@ -62,6 +63,10 @@ export default {
   background: rgb(32, 70, 141); /* Gecko Browsers */
 }
 
+#logo-short {
+  display: none;
+}
+
 html {
   /* scroll-behavior: smooth; */
   scrollbar-color: #2F3541 #0F1420;
@@ -87,6 +92,7 @@ button {
   color: white;
   font-size: inherit;
   cursor: pointer;
+  outline: none;
 }
 
 strong {
@@ -242,6 +248,16 @@ iframe {
     height: 50px;
   }
   
+}
+
+@media only screen and (max-width: 350px) {
+  #logo {
+    display: none;
+  }
+
+  #logo-short {
+    display: inline;
+  }
 }
 
 
