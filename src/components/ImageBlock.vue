@@ -116,7 +116,7 @@ p {
   width: 85%;
   border-radius: 3px;
   position: relative;
-  display: flex;
+  display: block !important;
 }
 
 img {
