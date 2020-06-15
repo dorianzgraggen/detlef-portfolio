@@ -106,6 +106,8 @@ img {
     justify-content: space-between;
     width: 100%;
     max-width: 1020px;
+    align-items: center;
+
 }
 
 .threephones > p > img {
@@ -166,6 +168,7 @@ img {
     max-width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .sidebyside > p > img:first-child {
@@ -268,7 +271,6 @@ img {
 
     .threephones > p {
         flex-wrap: wrap;
-        align-items: center;
     }
 
     .threephones {
