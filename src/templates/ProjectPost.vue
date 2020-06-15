@@ -268,6 +268,7 @@ img {
 
     .threephones > p {
         flex-wrap: wrap;
+        align-items: center;
     }
 
     .threephones {
