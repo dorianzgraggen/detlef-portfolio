@@ -8,7 +8,7 @@
 
 <script>
 // import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r115/build/three.module.js';
-var THREE = require("three");
+var THREE = require("three/build/three.min.js");
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
