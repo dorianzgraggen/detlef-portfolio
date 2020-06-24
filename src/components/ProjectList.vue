@@ -17,7 +17,7 @@
         
         <div class="thumb-container">
           <g-link :to="post.node.path">
-            <g-image :src="post.node.featuredImage"></g-image>
+            <g-image loading="lazy" :src="post.node.featuredImage"></g-image>
           </g-link>
           <!-- <g-image :src="post.node.featuredImage" width=""></g-image> -->
         </div>

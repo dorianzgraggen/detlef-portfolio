@@ -112,7 +112,7 @@ query ProjectPosts {
         content
         category
         path
-        featuredImage
+        featuredImage (width: 720, height: 200, quality: 20)
       }
     }
   },

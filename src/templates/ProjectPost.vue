@@ -2,6 +2,8 @@
 <template>
     <Layout>
         <h1 v-if="$page.post.category !== 'cgbookcase'">{{ $page.post.title }} </h1>
+        <g-image :src="$page.post.featuredImage" width="10"></g-image>
+        <g-image :src="$page.post.lowres" width="10"></g-image>
         <h1 v-if="$page.post.category === 'cgbookcase'" id="cgb-title">{{ $page.post.title }} </h1>
         <div class="text-center" v-if="$page.post.category === 'cgbookcase'" id="cgb-subtitle">cgbookcase.com</div>
         <!-- <div v-html="$page.post.content"></div> -->
@@ -15,6 +17,8 @@ query projectPost ($path: String!) {
     title
     content
     featuredImage
+    lowres:featuredImage (width: 100, blur: 40)
+    highres:featuredImage
     category
   }
 }

@@ -45,7 +45,7 @@ module.exports = {
   ],
   transformers: {
     remark: {
-      xternalLinksTarget: "_blank",
+      externalLinksTarget: "_blank",
       externalLinksRel: ["nofollow", "noopener", "noreferrer"],
       // anchorClassName: "icon icon-link",
     }
