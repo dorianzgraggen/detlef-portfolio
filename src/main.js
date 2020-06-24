@@ -11,6 +11,11 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('Layout', DefaultLayout)
 
   head.htmlAttrs = { lang: 'en' }
+  
+  head.script.push({
+    src: '/cube.js',
+    type: "module"
+  })
 
   // function smoothlyScrollTo(identifier) {
   //   // document.querySelector('identifier').scrollIntoView({ 
