@@ -1,6 +1,5 @@
-import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r115/build/three.module.js';
-import {OrbitControls} from 'https://threejsfundamentals.org/threejs/resources/threejs/r115/examples/jsm/controls/OrbitControls.js';
-import {GLTFLoader} from 'https://threejsfundamentals.org/threejs/resources/threejs/r115/examples/jsm/loaders/GLTFLoader.js';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.117.1/build/three.module.js';
+import {GLTFLoader} from 'https://cdn.jsdelivr.net/npm/three@0.117.1/examples/jsm/loaders/GLTFLoader.js';
 
 
 var bCubeIsSolved = false;
