@@ -10,7 +10,7 @@
 // import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r115/build/three.module.js';
 import * as THREE from "three/build/three.module.js";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 export default {
   name: 'ThreeScene',
@@ -57,16 +57,16 @@ export default {
     camera.rotation.y =  THREE.Math.degToRad( 21 )
     // camera.lookAt(0, 0, 0)
 
-    var controls = new OrbitControls( camera, renderer.domElement );
-    controls.enableDamping = true;
-    controls.dampingFactor = 0.07;
-    controls.enableKeys = false;
-    controls.enablePan = false;
-    controls.enableZoom = false;
-    //controls.autoRotateSpeed = 20.0;
-    controls.enabled = false;
+    // var controls = new OrbitControls( camera, renderer.domElement );
+    // controls.enableDamping = true;
+    // controls.dampingFactor = 0.07;
+    // controls.enableKeys = false;
+    // controls.enablePan = false;
+    // controls.enableZoom = false;
+    // //controls.autoRotateSpeed = 20.0;
+    // controls.enabled = false;
 
-    controls.update();
+    // controls.update();
 
     const scene = new THREE.Scene();
 
@@ -533,6 +533,7 @@ export default {
         delta = time - then; 
         then = time;
 
+        camera.lookAt(0, 0, 0)
         
 
 
@@ -606,7 +607,7 @@ export default {
         }
 
 
-        controls.update();
+        // controls.update();
 
         renderer.render(scene, camera);
 
