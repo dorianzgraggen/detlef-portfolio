@@ -12,10 +12,10 @@ export default function (Vue, { router, head, isClient }) {
 
   head.htmlAttrs = { lang: 'en' }
   
-  head.script.push({
-    src: '/cube.js',
-    type: "module"
-  })
+  // head.script.push({
+  //   src: '/cube.js',
+  //   type: "module"
+  // })
 
   // function smoothlyScrollTo(identifier) {
   //   // document.querySelector('identifier').scrollIntoView({ 
