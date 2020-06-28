@@ -1,7 +1,9 @@
 <template>
   <div class="three-container">
     <canvas id="c"></canvas>
-
+    <div id="cube-instruction">
+        click to solve
+    </div>
   </div>
     
 </template>
@@ -29,6 +31,11 @@ export default {
   },
   mounted() {
     
+    // Hide instruction text
+    setTimeout(() => {
+        document.getElementById("cube-instruction").style.opacity = 0;
+    }, 5000);
+
     var bCubeIsSolved = false;
     var bCurrentlySolving = false;
     var startRotation = new Quaternion();
@@ -306,6 +313,7 @@ export default {
 
     function startSolving() {
         document.body.querySelector(".three-container").style.cursor = "default";
+        document.getElementById("cube-instruction").style.opacity = 0;
 
         bCurrentlySolving = true;
         bRotateToFace = true;
@@ -469,20 +477,25 @@ export default {
 
 
     document.body.querySelector("#hash-cgb").addEventListener('mouseover', () => {
-        if(bCurrentlySolving) return;
-        (bCubeIsSolved) ? rotateTo(0) : startSolving()
+        if (bCurrentlySolving) return;
+        if (!bCubeIsSolved) return
+        rotateTo(0)
     });
     document.body.querySelector("#hash-3d").addEventListener('mouseover', () => {
-        if(bCurrentlySolving) return;
-        (bCubeIsSolved) ? rotateTo(2) : startSolving()
+        if (bCurrentlySolving) return;
+        if (!bCubeIsSolved) return;
+        rotateTo(2)
     });
     document.body.querySelector("#hash-vr").addEventListener('mouseover', () => {
-        if(bCurrentlySolving) return;
-        (bCubeIsSolved) ? rotateTo(3) : startSolving()
+        if (bCurrentlySolving) return;
+        if (!bCubeIsSolved) return;
+        rotateTo(3);
     });
+
     document.body.querySelector("#hash-more").addEventListener('mouseover', () => {
-        if(bCurrentlySolving) return;
-        (bCubeIsSolved) ? rotateTo(1) : startSolving()
+        if (bCurrentlySolving) return;
+        if (!bCubeIsSolved) return;
+        rotateTo(1)
     });
 
     document.body.querySelector("#hash-cgb").addEventListener('mouseout', () => {
@@ -628,6 +641,7 @@ export default {
   height: 100%;
   width: 100%;
   cursor: pointer;
+  position: relative;
 }
 
 #c {
@@ -638,5 +652,18 @@ export default {
 
 #c:focus {
     outline: none;
+}
+
+#cube-instruction {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-45%);
+    background: #000000b0;
+    text-shadow: 2px 2px 2px #00000024;
+    border-radius: 24px;
+    padding: 7px 17px;
+    opacity: 1;
+    transition-duration: 1s;
 }
 </style>
