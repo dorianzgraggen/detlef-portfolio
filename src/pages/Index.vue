@@ -75,7 +75,7 @@
     <section class="narrow">
     
       <h2 id="about">About</h2>
-      <p>I like to code and design cool things, that's pretty much it. I'm very soon starting an internship at <a href="https://www.raumgleiter.com/" target="_blank">Raumgleiter</a>. If you want to work together on a project, feel free to contact me:</p>
+      <p>I like to code and design cool things, that's pretty much it. I'm currently interning at <a href="https://www.raumgleiter.com/" target="_blank">Raumgleiter</a>. If you want to work together on a project, feel free to contact me:</p>
       <p class="text-center">dorian at dorianzgraggen dot com</p>
     </section>
 
